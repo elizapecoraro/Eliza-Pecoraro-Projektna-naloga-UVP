@@ -4,9 +4,13 @@ import csv
 
 #definiramo povezavo na spletno stran, ki jo bomo uporabili za pridobivanje podatkov
 url = 'https://www.basketball-reference.com/leagues/NBA_2024_per_game.html'
+#da nas spletna stran ne zavrne
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+}
 
 #v spremenjivko shranimo vsebino spletne strani
-stanje = requests.get(url)
+stanje = requests.get(url, headers=headers)
 stanje.raise_for_status() 
 
 #definiramo spremenjivko, ki bo pregledala HTML kodo spletne strani
