@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import csv
 
 #Definiramo povezavo na spletno stran, ki jo bomo uporabili za pridobivanje podatkov
-url = 'https://www.f1-fansite.com/f1-results/all-time-f1-driver-rankings/'
+url = 'https://www.basketball-reference.com/leagues/NBA_2024_per_game.html'
 
 #V spremenjivko shranimo vsebino spletne strani
 stanje = requests.get(url)
