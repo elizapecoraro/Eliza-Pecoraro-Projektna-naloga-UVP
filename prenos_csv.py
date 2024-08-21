@@ -4,7 +4,7 @@ import pandas as pd
 import csv
 
 #definiramo povezavo na spletno stran, ki jo bomo uporabili za pridobivanje podatkov
-url = 'https://www.basketball-reference.com/leagues/NBA_2024_per_game.html'
+url = 'https://www.basketball-reference.com/leagues/NBA_2024_totals.html'
 #da nas spletna stran ne zavrne
 #headers = {
 #    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
@@ -18,7 +18,7 @@ stanje = requests.get(url)
 pregled_kode = BeautifulSoup(stanje.content, 'html.parser')
 
 #vpisemo niz, ki ga zelimo poiskati v HTML kodi spletne strani
-tabela = pregled_kode.find('table', id="per_game_stats")
+tabela = pregled_kode.find('table', id="totals_stats")
 
 #za header
 headers = [th.text for th in tabela.thead.find_all("th")]
