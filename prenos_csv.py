@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import pandas as pd
 import csv
 
 #definiramo povezavo na spletno stran, ki jo bomo uporabili za pridobivanje podatkov
@@ -31,9 +30,9 @@ for tr in tabela.tbody.find_all("tr"):
         if len(vrstica) == len(headers):        #da je vrstica tok dolga kt header
                 vrstice.append(vrstica)
 
-#naredimo DataFrame (s pomocjo knjiznice pandas)
-df = pd.DataFrame(vrstice, columns=headers)
-
-#shranimo v csv
-df.to_csv("NBA.csv", index=False)
+# Shranimo v CSV datoteko z uporabo knjižnice csv
+with open("NBA.csv", mode="w", newline='', encoding='utf-8') as file:
+    writer = csv.writer(file)
+    writer.writerow(headers)  # Zapišemo header
+    writer.writerows(vrstice)  # Zapišemo vse vrstice
 
