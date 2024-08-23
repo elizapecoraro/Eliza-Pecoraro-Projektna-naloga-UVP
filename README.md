@@ -18,7 +18,7 @@ Za vsakega igralca sem zajela:
 - skupne točke.
 
 ## Navodila za uporabo
-Najprej moramo pognati datoteko *prenos_csv.py*, ki bo iz zgornje spletne strani zbrala podatke in jih zapisala v datoteko *NBA.csv*. Potem moramo le še pognati datoteko *analiza.ipynb*, v kateri so podatki natančneje analizirani.
+Najprej moramo pognati datoteko *prenos_csv.py*, ki bo iz zgornje spletne strani zbrala podatke in jih zapisala v datoteko *nba.csv*. Potem moramo le še pognati datoteko *analiza.ipynb*, v kateri so podatki natančneje analizirani.
 
 Uporabljene knjižnice: requests, bs4, csv, pandas, matplotlib.pyplot, numpy.
 
